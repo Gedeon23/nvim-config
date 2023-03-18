@@ -56,3 +56,21 @@ local lsp = require('lsp-zero').preset({
 lsp.nvim_workspace()
 
 lsp.setup()
+
+require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
+})
+
+
+-- 	=================
+-- 	NEOVIM - SETTINGS
+-- 	=================
+
+vim.wo.relativenumber = true
+

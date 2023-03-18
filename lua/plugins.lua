@@ -5,13 +5,49 @@ return {
 --	PLUGINS - CONFIG
 --	================
 
-	"folke/which-key.nvim",
+	{
+		    "folke/which-key.nvim",
+		    config = function()
+			      vim.o.timeout = true
+			      vim.o.timeoutlen = 300
+			      require("which-key").setup()
+		    end,
+	},
+	{'romgrk/barbar.nvim', dependencies = 'nvim-tree/nvim-web-devicons'},
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 	{ "nvim-telescope/telescope.nvim", tag = "0.1.1",
 		cmd = "Telescope",
+		event = "BufEnter",
 		dependencies = { "nvim-lua/plenary.nvim" }
 	},
-	"mbbill/undotree",
+	{ "nvim-telescope/telescope-file-browser.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim"},
+		event = "BufEnter",
+	},
+	{ "mbbill/undotree",
+	  event = "BufEnter", },
+	{
+	    "gennaro-tedesco/nvim-possession",
+	    dependencies = {
+		"ibhagwan/fzf-lua",
+	    },
+	    config = true,
+	    autoswitch = {
+		    enable = true,
+	    },
+	    init = function()
+		local possession = require("nvim-possession")
+		vim.keymap.set("n", "<leader>sl", function()
+		    possession.list()
+		end)
+		vim.keymap.set("n", "<leader>sn", function()
+		    possession.new()
+		end)
+		vim.keymap.set("n", "<leader>su", function()
+		    possession.update()
+		end)
+	    end,
+	},
 
 
 --	==============
