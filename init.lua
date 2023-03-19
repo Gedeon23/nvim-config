@@ -83,8 +83,10 @@ require("mason").setup({
 --	SNIPPET CONFIG
 --	==============
 
--- require("luasnip.loaders")
-
+ls = require("luasnip")
+ls.config.set_config({
+	enable_autosnippets = true,
+})
 
 
 --	===============

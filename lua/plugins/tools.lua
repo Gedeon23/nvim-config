@@ -34,6 +34,6 @@ return {
 		config = function()
 			require'luasnip-latex-snippets'.setup()
 		end,
-		ft = "tex",
+		lazy = false,
 	},
 }
