@@ -1,4 +1,15 @@
-require("remap")
+
+-- 	=================
+-- 	NEOVIM - SETTINGS
+-- 	=================
+
+vim.wo.relativenumber = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.clipboard = "unnamedplus"
+vim.g.mapleader = " "
+
 
 --	============
 --	LAZY - SETUP
@@ -68,12 +79,17 @@ require("mason").setup({
 })
 
 
--- 	=================
--- 	NEOVIM - SETTINGS
--- 	=================
+--	===============
+--  KEYMAP - CONFIG
+--  ===============
 
-vim.wo.relativenumber = true
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.clipboard = "unnamedplus"
+local telescope = require("telescope")
+local builtin = require("telescope.builtin")
+
+vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+vim.keymap.set("n", "<space>fb", telescope.extensions.file_browser.file_browser , { noremap = true })
+
+vim.keymap.set("n", "<leader>.", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+vim.keymap.set("n", "<leader>l", vim.cmd.Lazy)
+
