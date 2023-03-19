@@ -16,9 +16,8 @@ return {
 	{'romgrk/barbar.nvim', dependencies = 'nvim-tree/nvim-web-devicons'},
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 	{ "nvim-telescope/telescope.nvim", tag = "0.1.1",
-		cmd = "Telescope",
-		event = "BufEnter",
-		dependencies = { "nvim-lua/plenary.nvim" }
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function() require("telescope").setup() end
 	},
 	{ "nvim-telescope/telescope-file-browser.nvim",
 		dependencies = { "nvim-telescope/telescope.nvim"},
