@@ -30,11 +30,9 @@ return {
 
 	{
 		"iurimateus/luasnip-latex-snippets.nvim",
-		-- replace "lervag/vimtex" with "nvim-treesitter/nvim-treesitter" if you're
-		-- using treesitter.
 		dependencies = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
 		config = function()
-			require'luasnip-latex-snippets'.setup({ use_treesitter = true })
+			require'luasnip-latex-snippets'.setup()
 		end,
 		ft = "tex",
 	},

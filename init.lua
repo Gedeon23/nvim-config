@@ -79,6 +79,14 @@ require("mason").setup({
 })
 
 
+--	==============
+--	SNIPPET CONFIG
+--	==============
+
+-- require("luasnip.loaders")
+
+
+
 --	===============
 --  KEYMAP - CONFIG
 --  ===============
@@ -86,10 +94,12 @@ require("mason").setup({
 local telescope = require("telescope")
 local builtin = require("telescope.builtin")
 
+-- TELESCOPES
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-vim.keymap.set("n", "<space>fb", telescope.extensions.file_browser.file_browser , { noremap = true })
+vim.keymap.set("n", "<leader>fb", telescope.extensions.file_browser.file_browser , { noremap = true })
+vim.keymap.set("n", "<leader>fs", telescope.extensions.luasnip.luasnip, {})
 
-vim.keymap.set("n", "<leader>.", vim.cmd.Ex)
+-- OTHER
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 vim.keymap.set("n", "<leader>l", vim.cmd.Lazy)
 
