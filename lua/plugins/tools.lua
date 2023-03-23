@@ -36,4 +36,11 @@ return {
 		end,
 		lazy = false,
 	},
+	
+	{
+		'stevearc/oil.nvim',
+		config = function() 
+			require('oil').setup() 
+		end,
+	},
 }

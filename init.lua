@@ -7,6 +7,7 @@ vim.wo.relativenumber = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.termguicolors = true
 vim.opt.clipboard = "unnamedplus"
 vim.g.mapleader = " "
 
@@ -104,4 +105,4 @@ vim.keymap.set("n", "<leader>fs", telescope.extensions.luasnip.luasnip, {})
 -- OTHER
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 vim.keymap.set("n", "<leader>l", vim.cmd.Lazy)
-
+vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
