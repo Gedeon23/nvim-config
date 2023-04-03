@@ -21,4 +21,12 @@ return {
 			{'rafamadriz/friendly-snippets'}, -- Optional
 		}
 	},
+
+	{
+		"anekos/hledger-vim",
+		ft = "journal",
+		config = function()
+			require("hledger-vim").setup()
+		end,
+	},
 }

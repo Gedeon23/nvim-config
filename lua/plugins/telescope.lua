@@ -19,6 +19,12 @@ return {
 						end
 					},
 				},
+				pickers = {
+					find_files = {
+						hidden = true,
+					},
+				},
+
 			})
 			telescope.load_extension "file_browser"
 			telescope.load_extension "luasnip"
